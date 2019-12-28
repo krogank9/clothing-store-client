@@ -1,0 +1,41 @@
+.hero-slider {
+  height: 500px;
+  background-image: url("guy in shirt.jpg");
+  background-position: center;
+  background-size: cover;
+  text-align: left;
+  position: relative;
+  padding: 36px;
+}
+
+.hero-text-container {
+  font-size: 30px;
+  position: absolute;
+  top: 40%;
+  font-family: 'Montserrat', sans-serif;
+  color: white
+}
+
+.hero-maintext {
+  font-weight: bold;
+}
+
+.hero-subtext {
+  font-size: 19px;
+}
+
+.shop-button {
+  background-color: white;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 27px;
+  padding: 18px 28px;
+  font-size: 13.5px;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+.shop-buttons-container {
+  margin-top: 16px;
+}

@@ -1,0 +1,14 @@
+.add-to-cart-button {
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 27px;
+    padding: 18px 28px;
+    font-size: 13.5px;
+    text-decoration: none;
+  }
+
+  .add-to-cart-button-container {
+      padding: 40px;
+  }

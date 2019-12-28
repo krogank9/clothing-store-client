@@ -1,0 +1,20 @@
+.logout-button-container {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.logout-button {
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 27px;
+  padding: 18px 28px;
+  font-size: 13.5px;
+  text-decoration: none;
+}
+
+.collection-box img {
+  width: 200px;
+  height: auto;
+}

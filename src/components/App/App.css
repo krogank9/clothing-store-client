@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 60px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #444;
+  text-align: center;
+  line-height: 1.5;
+}
+
+header {
+  padding: 12% 0;
+}
+
+section {
+  min-height: 200px;
+  padding: 50px 0;
+}
+
+.form-error {
+  color: red;
+}
+
+.title-link {
+  color: #004D97;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.title-link-light {
+  color: #004D97;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.title-link-light:hover, .title-link:hover  {
+  color: #004D97;
+  text-decoration: underline;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+}
