@@ -1,4 +1,4 @@
-.add-to-cart-button {
+.item-button {
     background-color: black;
     color: white;
     text-transform: uppercase;
@@ -7,8 +7,10 @@
     padding: 18px 28px;
     font-size: 13.5px;
     text-decoration: none;
+    white-space: nowrap;
+    margin: 0 4px;
   }
 
-  .add-to-cart-button-container {
+  .item-buttons-container {
       padding: 40px;
   }

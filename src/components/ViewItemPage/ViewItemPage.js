@@ -24,8 +24,9 @@ class ViewCollectionPage extends React.Component {
             <div>
               This brown plaid shirt is comfy and stylish. Buy now!
             </div>
-            <div className="add-to-cart-button-container">
-              <Link className="add-to-cart-button">Add to cart</Link>
+            <div className="item-buttons-container">
+              <Link className="item-button">Favorite Item</Link>
+              <Link className="item-button">Add to cart</Link>
             </div>
           </div>
 

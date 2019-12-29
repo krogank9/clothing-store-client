@@ -41,11 +41,6 @@ class NavBar extends React.Component {
           <div className="nav-right desktop-only">
             <div className="inline-block">
               <div className="nav-icon">
-                <Link><img src={`${process.env.PUBLIC_URL}/assets/search.svg`} alt="Search"></img></Link>
-              </div>
-            </div>
-            <div className="inline-block">
-              <div className="nav-icon">
                 <Link to="/cart"><img src={`${process.env.PUBLIC_URL}/assets/cart.svg`} alt="Cart"></img></Link>
               </div>
             </div>
@@ -75,6 +70,7 @@ class NavBar extends React.Component {
           <Link to="/collections">Mens</Link>
           <Link to="/collections">Womens</Link>
           <Link to="/collections">Accessories</Link>
+          <Link to="/cart">Cart</Link>
           <Link to="/login">Login</Link>
           <Link to="/profile">View Profile</Link>
         </div>
