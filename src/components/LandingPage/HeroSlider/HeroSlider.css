@@ -18,10 +18,12 @@
 
 .hero-maintext {
   font-weight: bold;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .hero-subtext {
   font-size: 19px;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .shop-button {
@@ -34,8 +36,22 @@
   font-size: 13.5px;
   margin-right: 5px;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .shop-buttons-container {
   margin-top: 16px;
+}
+
+/* mobile only */
+
+@media screen and (max-width: 600px) {
+  .hero-slider {
+    padding: 5px; 
+  }
+  .hero-text-container {
+    width: 100%;
+    top: 36%;
+    text-align: center;
+  }
 }

@@ -106,3 +106,72 @@
 .sm-font {
   font-size: 12px;
 }
+
+.nav-dropdown-menu {
+  display: none;
+}
+
+/* mobile only */
+
+@media screen and (max-width: 600px) {
+  .hero-slider {
+    padding: 5px; 
+  }
+  .hero-text-container {
+    width: 100%;
+    text-align: center;
+  }
+  .desktop-only {
+    display: none;
+  }
+  .nav-header {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .nav-dropdown-menu {
+    display: block;
+  }
+  .nav-dropdown-menu > * {
+    display: block;
+    padding: 4px;
+    
+  }
+}
+
+
+.menu-icon {
+  height: 30px;
+  width: auto;
+}
+
+/*-- menu icon --*/
+
+.menu-button {
+  display: inline-block;
+  height: 100%;
+  padding: 14px 20px;
+  text-transform: uppercase;
+  font-size: 18px;
+  position: relative;
+}
+
+.nav-dropdown-button {
+  position: absolute;
+  right: 0px;
+  top: 0;
+  height: 100%;
+  text-align: right;
+  overflow: hidden;
+}
+
+/* desktop only */
+
+@media screen and (min-width: 600px) {
+  .desktop-only {
+    display: unset;
+  }
+  .nav-dropdown-button {
+    display: none;
+  }
+}

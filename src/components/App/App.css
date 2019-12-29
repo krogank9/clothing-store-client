@@ -45,3 +45,11 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   color: black;
 }
+
+/* mobile only */
+
+@media screen and (max-width: 600px) {
+  body {
+    padding-top: 0px; 
+  }
+}
