@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the static WIP branch of the React clothing store demo app.
 
 ## Available Scripts
 
