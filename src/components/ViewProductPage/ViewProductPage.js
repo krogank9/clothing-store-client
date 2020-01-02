@@ -1,5 +1,5 @@
 import React from 'react';
-import './ViewItemPage.css';
+import './ViewProductPage.css';
 
 import { Link } from "react-router-dom";
 

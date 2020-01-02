@@ -15,6 +15,10 @@ class NavBar extends React.Component {
     }
   }
 
+  toggleDropdown = () => {
+    this.setState({ showDropdown: !this.state.showDropdown })
+  }
+
   render() {
     return (
       <nav>
@@ -41,23 +45,19 @@ class NavBar extends React.Component {
           <div className="nav-right desktop-only">
             <div className="inline-block">
               <div className="nav-icon">
-                <Link to="/cart"><img src={`${process.env.PUBLIC_URL}/assets/cart.svg`} alt="Cart"></img></Link>
+                <Link className="cart-icon" to="/cart"><img src={`${process.env.PUBLIC_URL}/assets/cart.svg`} alt="Cart"></img></Link>
               </div>
             </div>
             <div className="inline-block">
               <Link to="/login" className="nav-button">
                 Login
               </Link>
-              /
-              <Link to="/profile" className="nav-button">
-                Username
-              </Link>
             </div>
           </div>
 
           <div className="nav-dropdown-button">
             <div className="inline-block">
-              <Link className="menu-button">
+              <Link className="menu-button" onClick={this.toggleDropdown}>
                 <img src={`${process.env.PUBLIC_URL}/assets/menu-icon.svg`} className="menu-icon" alt="Navigation Menu"></img>
               </Link>
             </div>
@@ -65,15 +65,17 @@ class NavBar extends React.Component {
 
         </div>
 
-        <div className="nav-dropdown-menu">
-          <Link to="/">Home</Link>
-          <Link to="/collections">Mens</Link>
-          <Link to="/collections">Womens</Link>
-          <Link to="/collections">Accessories</Link>
-          <Link to="/cart">Cart</Link>
-          <Link to="/login">Login</Link>
-          <Link to="/profile">View Profile</Link>
-        </div>
+        {this.state.showDropdown ? (
+          <div className="nav-dropdown-menu">
+            <Link to="/">Home</Link>
+            <Link to="/collections">Mens</Link>
+            <Link to="/collections">Womens</Link>
+            <Link to="/collections">Accessories</Link>
+            <Link to="/cart">Cart</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/profile">View Profile</Link>
+          </div>
+        ) : false}
       </nav>
     );
   }
