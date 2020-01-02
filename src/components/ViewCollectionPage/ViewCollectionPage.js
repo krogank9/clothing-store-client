@@ -18,7 +18,7 @@ class ViewCollectionPage extends React.Component {
         <div className="collection-grid">
 
           <div className="collection-box">
-            <Link to="/items/brown-plaid-shirt">
+            <Link to="/products/brown-plaid-shirt">
               <div>
                 <img src={`${process.env.PUBLIC_URL}/assets/products/shirt.jpg`}></img>
               </div>
@@ -28,7 +28,7 @@ class ViewCollectionPage extends React.Component {
             </Link>
           </div>
           <div className="collection-box">
-            <Link to="/items/brown-plaid-shirt">
+            <Link to="/products/brown-plaid-shirt">
               <div>
                 <img src={`${process.env.PUBLIC_URL}/assets/products/shirt.jpg`}></img>
               </div>
@@ -38,7 +38,7 @@ class ViewCollectionPage extends React.Component {
             </Link>
           </div>
           <div className="collection-box">
-            <Link to="/items/brown-plaid-shirt">
+            <Link to="/products/brown-plaid-shirt">
               <div>
                 <img src={`${process.env.PUBLIC_URL}/assets/products/shirt.jpg`}></img>
               </div>

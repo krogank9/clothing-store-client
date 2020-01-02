@@ -48,7 +48,7 @@ h1 {
 
 /* mobile only */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   body {
     padding-top: 0px; 
   }

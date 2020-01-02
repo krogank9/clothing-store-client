@@ -13,7 +13,7 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 import CheckoutPageFake from '../CheckoutPageFake/CheckoutPageFake';
 import ListCollectionsPage from '../ListCollectionsPage/ListCollectionsPage';
 import ViewCollectionPage from '../ViewCollectionPage/ViewCollectionPage';
-import ViewItemPage from '../ViewItemPage/ViewItemPage';
+import ViewProductPage from '../ViewProductPage/ViewProductPage';
 
 class App extends React.Component {
   constructor() {
@@ -36,7 +36,7 @@ class App extends React.Component {
           <Route exact path="/checkout" component={CheckoutPageFake} />
           <Route exact path="/collections" component={ListCollectionsPage} />
           <Route exact path="/collections/:collectionName" component={ViewCollectionPage} />
-          <Route exact path="/items/:itemName" component={ViewItemPage} />
+          <Route exact path="/products/:productName" component={ViewProductPage} />
           <Route component={LandingPage} />
         </Switch>
       </div>
