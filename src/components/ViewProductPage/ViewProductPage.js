@@ -15,7 +15,15 @@ class ViewCollectionPage extends React.Component {
     return (
       <div className="cart-page">
         <h1>Brown Plaid Shirt</h1>
-        <div className="collection-grid">
+        <div>
+
+          <div>
+            <Link to="/products/brown-plaid-shirt/reviews" className="review-link">
+            ★★★★✰ &nbsp; 3 Reviews
+            </Link>
+          </div>
+
+          <br />
 
           <div className="collection-box">
             <div>
