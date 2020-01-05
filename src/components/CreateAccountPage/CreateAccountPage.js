@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
 
+import ClothingStoreApiService from '../../services/clothing-store-api-service';
+import ClothingStoreContext from '../../contexts/ClothingStoreContext';
+
 class CreateAccountPage extends Component {
+  static contextType = ClothingStoreContext
 
   constructor() {
     super();
@@ -9,9 +13,34 @@ class CreateAccountPage extends Component {
     this.state = {
       userName: "",
       password: "",
-      profilePicture: 1,
       errorMessage: ""
     }
+  }
+
+  handleSubmit = (evt) => {
+    evt.preventDefault();
+
+    ClothingStoreApiService.registerUser(this.state.userName, this.state.password, this.state.profilePicture)
+      .then(json => {
+        ClothingStoreApiService.login(this.state.userName, this.state.password)
+          .then(json => {
+            this.context.onUserLoggedIn(json.authToken, json.userName, json.userId)
+            this.props.history.goBack()
+          })
+          .catch(e => {
+            this.setState({errorMessage: e.error})
+          })
+      })
+      .catch(e => {
+        this.setState({errorMessage: e.error})
+      })
+
+  }
+
+  updateFormState = (evt) => {
+    let name = evt.target.getAttribute("name")
+
+    this.setState({ [name]: evt.target.value })
   }
 
   render() {

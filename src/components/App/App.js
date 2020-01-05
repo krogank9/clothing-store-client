@@ -35,6 +35,7 @@ class App extends React.Component {
   }
 
   onUserLoggedIn = (authToken, userName, userId) => {
+    console.log("logged in ", userName, userId)
     TokenService.saveAuthToken(authToken)
     this.setState({
       loggedInUser: { userName: userName, id: userId }

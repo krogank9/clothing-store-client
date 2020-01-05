@@ -1,9 +1,15 @@
 import React from 'react';
+import { withRouter } from "react-router-dom";
+
 import './ProfilePage.css';
+
+import ClothingStoreContext from '../../contexts/ClothingStoreContext.js';
 
 import { Link } from "react-router-dom";
 
 class ProfilePage extends React.Component {
+  static contextType = ClothingStoreContext;
+
   constructor() {
     super();
 
@@ -11,12 +17,17 @@ class ProfilePage extends React.Component {
     }
   }
 
+  logoutUser = () => {
+    this.context.onUserLogout();
+    this.props.history.push("/")
+  }
+
   render() {
     return (
       <div className="cart-page">
         <h1>Your Profile</h1>
         <div className="logout-button-container">
-          <Link className="logout-button" to="/">Logout</Link>
+          <Link className="logout-button" to="#" onClick={this.logoutUser}>Logout</Link>
         </div>
 
         <h2>Favorites</h2>
@@ -60,4 +71,4 @@ class ProfilePage extends React.Component {
   }
 }
 
-export default ProfilePage;
+export default withRouter(ProfilePage);
