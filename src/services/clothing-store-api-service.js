@@ -78,6 +78,20 @@ const ClothingStoreApiService = {
           : res.json()
       )
   },
+  getProductsFromIdList(productIds) {
+    return fetch(`${config.API_ENDPOINT}/products`, {
+      headers: {
+      },
+      body: JSON.stringify({
+        productIds: productIds,
+      }),
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+  },
   // Favorites
   getMyFavorites(authToken) {
     return fetch(`${config.API_ENDPOINT}/favorites`, {

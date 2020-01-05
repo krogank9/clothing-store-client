@@ -33,8 +33,8 @@ class App extends React.Component {
     }
   }
 
-  pushToCart = (productId) => {
-    const newCart = [...this.state.cart, productId]
+  pushToCart = (product) => {
+    const newCart = [...this.state.cart, product]
     if(newCart.length >= 30) {
       return false
     }

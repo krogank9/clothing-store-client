@@ -38,7 +38,11 @@ class CartItem extends React.Component {
             </div>
           </div>
         </td>
-        <td>{this.props.quantity}</td>
+        <td>
+          {this.props.quantity}
+          <br />
+          <Link to="#" onClick={this.props.onRemoveClicked}>Remove</Link>
+        </td>
         <td>${this.getQuantityPrice()}</td>
       </tr>
     );

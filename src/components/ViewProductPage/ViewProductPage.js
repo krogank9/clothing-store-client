@@ -38,7 +38,7 @@ class ViewProductPage extends React.Component {
   }
 
   addToCart = () => {
-    if (this.context.pushToCart(this.state.product.id)) {
+    if (this.context.pushToCart(this.state.product)) {
       this.setState({ message: "Added item to cart", messageIsError: false });
     }
     else {
