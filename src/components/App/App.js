@@ -45,7 +45,7 @@ class App extends React.Component {
     let authToken = TokenService.getAuthToken();
 
     if (authToken && authToken.length > 0) {
-      ForumApiService.refresh(authToken).then(json => {
+      ClothingStoreApiService.refresh(authToken).then(json => {
         this.onUserLoggedIn(json.authToken, json.userName, json.userId)
       })
     }

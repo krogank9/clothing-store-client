@@ -135,7 +135,7 @@ const ClothingStoreApiService = {
           : res.json()
       )
   },
-  postReview(authToken, productId, rating, headline, content, productId) {
+  postReview(authToken, productId, rating, headline, content) {
     return fetch(`${config.API_ENDPOINT}/favorites`, {
       method: 'POST',
       headers: {
