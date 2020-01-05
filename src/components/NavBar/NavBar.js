@@ -80,9 +80,9 @@ class NavBar extends React.Component {
                 <Link to="/collections">Accessories</Link>
                 <Link to="/cart">Cart</Link>
                 {loggedInUser ?
-                  <Link to="/login">Login</Link>
-                  :
                   <Link to="/profile">View Profile</Link>
+                  :
+                  <Link to="/login">Login</Link>
                 }
               </div>
             ) : false}
