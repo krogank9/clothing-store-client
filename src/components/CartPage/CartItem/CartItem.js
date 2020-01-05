@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
+import ClothingStoreContext from '../../../contexts/ClothingStoreContext.js';
+
 import Utils from "../../../utils";
 
 class CartItem extends React.Component {
+  static contextType = ClothingStoreContext;
+
   constructor() {
     super();
 
@@ -11,9 +15,13 @@ class CartItem extends React.Component {
     }
   }
 
+  onRemoveClicked = () => {
+    this.context.removeFromCart(this.props.product.id)
+  }
+
   getSize = () => {
     //this.props.size
-    return "Medium"
+    return false//"Medium"
   }
 
   getPrice = () => {
@@ -30,7 +38,7 @@ class CartItem extends React.Component {
         <td>
           <div className="cart-item">
             <div className="cart-item-img-container">
-              <img className="cart-product-img" src={`${process.env.PUBLIC_URL}/assets/products/shirt.jpg`}></img>
+              <img className="cart-product-img" src={`${process.env.PUBLIC_URL}/assets/products/${Utils.normalizeName(this.props.product.name)}.jpg`}></img>
             </div>
             <div className="cart-item-info">
               <div>{this.props.product.name}</div>
@@ -41,7 +49,7 @@ class CartItem extends React.Component {
         <td>
           {this.props.quantity}
           <br />
-          <Link to="#" onClick={this.props.onRemoveClicked}>Remove</Link>
+          <Link to="#" onClick={this.onRemoveClicked}>Remove</Link>
         </td>
         <td>${this.getQuantityPrice()}</td>
       </tr>

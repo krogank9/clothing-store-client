@@ -38,7 +38,7 @@ class ListCollectionsPage extends React.Component {
     }
     else { // loaded
       let collections = this.state.collections.map((c, i) => <Collection name={c.name} collectionId={c.id} key={i} />)
-      content = <ul className="collection-grid">{collections}</ul>
+      content = <ul className="collection-list">{collections}</ul>
     }
 
     return (

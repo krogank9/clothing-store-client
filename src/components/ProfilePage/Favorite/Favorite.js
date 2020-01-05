@@ -6,8 +6,9 @@ import Utils from "../../../utils";
 class Favorite extends React.Component {
 
   getSize = () => {
+    // todo implement sizes for cart, favorite, & product pages
     //this.props.size
-    return "Medium"
+    return false//"Medium"
   }
 
   getPrice = () => {
@@ -20,7 +21,7 @@ class Favorite extends React.Component {
         <td>
           <div className="cart-item">
             <div className="cart-item-img-container">
-              <img className="cart-product-img" src={`${process.env.PUBLIC_URL}/assets/products/shirt.jpg`}></img>
+              <img className="cart-product-img" src={`${process.env.PUBLIC_URL}/assets/products/${Utils.normalizeName(this.props.product.name)}.jpg`}></img>
             </div>
             <div className="cart-item-info">
               <div>{this.props.product.name}</div>

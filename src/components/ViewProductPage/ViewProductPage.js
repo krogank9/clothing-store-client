@@ -89,7 +89,7 @@ class ViewProductPage extends React.Component {
 
             <div className="collection-box">
               <div>
-                <img src={`${process.env.PUBLIC_URL}/assets/products/shirt.jpg`}></img>
+                <img src={`${process.env.PUBLIC_URL}/assets/products/${Utils.normalizeName(this.state.product.name)}.jpg`}></img>
               </div>
               <div>
                 {this.state.product.description}

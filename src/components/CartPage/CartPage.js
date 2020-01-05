@@ -43,32 +43,49 @@ class CartPage extends React.Component {
   }
 
   render() {
+    let cartContent
+
     return (
       <ClothingStoreContext.Consumer>
         {({ cart }) => (
           <div className="cart-page">
             <h1>Shopping Cart</h1>
-            <table className="cart-table">
-              <tbody>
-                <tr>
-                  <th>Item</th>
-                  <th>Quantity</th>
-                  <th>Subtotal</th>
-                </tr>
 
-                {this.getCartJSX(cart)}
+            {cart.length === 0 ?
+              (
+                <div>
+                  Your cart is currently empty.
+                  Continue browsing <Link to="/collections">here</Link>.
+                </div>
+              )
+              :
+              (
+                <>
+                  <table className="cart-table">
+                    <tbody>
+                      <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                      </tr>
 
-                <tr>
-                  <td colSpan="3">
-                    <span className="cart-continue"><Link to="/collections">Continue shopping</Link></span>
-                    <span className="cart-total">Total: ${this.getCartPriceTotal(cart)}</span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div className="checkout-button-container">
-              <Link className="checkout-button" to="/checkout">Checkout</Link>
-            </div>
+                      {this.getCartJSX(cart)}
+
+                      <tr>
+                        <td colSpan="3">
+                          <span className="cart-continue"><Link to="/collections">Continue shopping</Link></span>
+                          <span className="cart-total">Total: ${this.getCartPriceTotal(cart)}</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div className="checkout-button-container">
+                    <Link className="checkout-button" to="/checkout">Checkout</Link>
+                  </div>
+                </>
+              )
+            }
           </div>
         )}
       </ClothingStoreContext.Consumer>

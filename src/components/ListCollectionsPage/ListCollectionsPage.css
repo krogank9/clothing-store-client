@@ -18,3 +18,13 @@
   width: 200px;
   height: auto;
 }
+
+.collection-list {
+  list-style: none;
+  padding: 0;
+}
+
+.collection-li img {
+  width: 300px;
+  max-width: 90%;
+}

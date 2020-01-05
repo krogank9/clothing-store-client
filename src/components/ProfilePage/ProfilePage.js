@@ -60,6 +60,8 @@ class ProfilePage extends React.Component {
           <h1>Not logged in</h1>
           <div className="logout-button-container">
             <Link className="logout-button" to="/login">Login Here</Link>
+            &nbsp;
+            <Link className="logout-button" to="/cart">View Cart</Link>
           </div>
         </div>
       )
@@ -96,6 +98,8 @@ class ProfilePage extends React.Component {
         <h1>Your Profile</h1>
         <div className="logout-button-container">
           <Link className="logout-button" to="#" onClick={this.logoutUser}>Logout</Link>
+          &nbsp;
+          <Link className="logout-button" to="/cart">View Cart</Link>
         </div>
 
         <h2>Favorites</h2>

@@ -10,7 +10,7 @@ class Product extends Component {
       <li className="product-li">
         <Link to={`/products/${Utils.normalizeName(this.props.name)}.${this.props.productId}`}>
           <div>
-            <img src={`${process.env.PUBLIC_URL}/assets/products/shirt.jpg`}></img>
+            <img src={`${process.env.PUBLIC_URL}/assets/products/${Utils.normalizeName(this.props.name)}.jpg`}></img>
           </div>
           <div>
             {this.props.name}
