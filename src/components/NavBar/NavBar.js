@@ -31,13 +31,13 @@ class NavBar extends React.Component {
 
               <div className="nav-center desktop-only">
                 <div className="inline-block">
-                  <Link to="/collections" className="nav-button">Mens</Link>
+                  <Link to="/collections/shirts.1" className="nav-button">Shirts</Link>
                 </div>
                 <div className="inline-block">
-                  <Link to="/collections" className="nav-button">Womens</Link>
+                  <Link to="/collections/pants.2" className="nav-button">Pants</Link>
                 </div>
                 <div className="inline-block">
-                  <Link to="/collections" className="nav-button">Accessories</Link>
+                  <Link to="/collections" className="nav-button">All Collections</Link>
                 </div>
               </div>
 
@@ -49,8 +49,13 @@ class NavBar extends React.Component {
 
               <div className="nav-right desktop-only">
                 <div className="inline-block">
-                  <div className="nav-icon">
-                    <Link className="cart-icon" to="/cart"><img src={`${process.env.PUBLIC_URL}/assets/cart.svg`} alt="Cart"></img></Link>
+                  <div className="nav-icon cart-icon">
+                    <Link to="/cart">
+                      <div className="cart-length-text">
+                        {this.context.cart.length}
+                      </div>
+                      <img src={`${process.env.PUBLIC_URL}/assets/cart.svg`} alt="Cart"></img>
+                    </Link>
                   </div>
                 </div>
                 <div className="inline-block">
@@ -64,7 +69,7 @@ class NavBar extends React.Component {
 
               <div className="nav-dropdown-button">
                 <div className="inline-block">
-                  <Link className="menu-button" onClick={this.toggleDropdown}>
+                  <Link to="#" className="menu-button" onClick={this.toggleDropdown}>
                     <img src={`${process.env.PUBLIC_URL}/assets/menu-icon.svg`} className="menu-icon" alt="Navigation Menu"></img>
                   </Link>
                 </div>

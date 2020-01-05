@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 
 import ClothingStoreContext from '../../contexts/ClothingStoreContext.js';
 
+import CartService from '../../services/cart-service';
 import TokenService from '../../services/token-service';
 import ClothingStoreApiService from '../../services/clothing-store-api-service';
 
@@ -22,11 +23,30 @@ import ViewReviewsPage from '../ViewReviewsPage/ViewReviewsPage';
 import WriteReviewPage from '../WriteReviewPage/WriteReviewPage';
 
 class App extends React.Component {
+  static contextType = ClothingStoreContext
+
   constructor() {
     super();
 
     this.state = {
+      cart: []
     }
+  }
+
+  pushToCart = (productId) => {
+    const newCart = [...this.state.cart, productId]
+    if(newCart.length >= 30) {
+      return false
+    }
+    this.setState({ cart: newCart });
+    CartService.setCart(newCart)
+    return true
+  }
+
+  removeFromCart = (productId) => {
+    const newCart = this.state.cart.filter(p => p.id !== productId)
+    this.setState({ cart: newCart });
+    CartService.setCart(newCart)
   }
 
   onUserLogout = (authToken, userName, userId) => {
@@ -35,7 +55,6 @@ class App extends React.Component {
   }
 
   onUserLoggedIn = (authToken, userName, userId) => {
-    console.log("logged in ", userName, userId)
     TokenService.saveAuthToken(authToken)
     this.setState({
       loggedInUser: { userName: userName, id: userId }
@@ -55,13 +74,18 @@ class App extends React.Component {
   componentDidMount() {
     // Try to refresh the JWT token & log in on page load
     this.tryRefreshLogin();
+    // Sync cart length
+    this.state.cart = CartService.getCartItems()
   }
 
   render() {
     let contextValue = {
       ...(this.state),
       "onUserLoggedIn": this.onUserLoggedIn,
-      "onUserLogout": this.onUserLogout
+      "onUserLogout": this.onUserLogout,
+      cart: this.state.cart,
+      "pushToCart": this.pushToCart,
+      "removeFromCart": this.removeFromCart,
     };
     return (
       <ClothingStoreContext.Provider value={contextValue}>
@@ -75,10 +99,19 @@ class App extends React.Component {
             <Route exact path="/profile" component={ProfilePage} />
             <Route exact path="/checkout" component={CheckoutPageFake} />
             <Route exact path="/collections" component={ListCollectionsPage} />
-            <Route exact path="/collections/:collectionName" component={ViewCollectionPage} />
-            <Route exact path="/products/:productName/reviews" component={ViewReviewsPage} />
-            <Route exact path="/products/:productName/write-review" component={WriteReviewPage} />
-            <Route exact path="/products/:productName" component={ViewProductPage} />
+            <Route exact path="/collections/:collectionName" render={(props) => (
+              // Added render with key to this so component get remounted each time the route changes
+              <ViewCollectionPage key={props.match.params.collectionName} {...props} />
+            )} />
+            <Route exact path="/products/:productName/reviews" render={(props) => (
+              <ViewReviewsPage key={props.match.params.productName+"/reviews"} {...props} />
+            )} />
+            <Route exact path="/products/:productName/write-review" render={(props) => (
+              <WriteReviewPage key={props.match.params.productName+"/write-review"} {...props} />
+            )} />
+            <Route exact path="/products/:productName" render={(props) => (
+              <ViewProductPage key={props.match.params.productName} {...props} />
+            )} />
             <Route component={LandingPage} />
           </Switch>
         </div>

@@ -1,54 +1,52 @@
 import React from 'react';
 import './ListCollectionsPage.css';
 
+import ClothingStoreApiService from '../../services/clothing-store-api-service';
+
 import { Link } from "react-router-dom";
+
+import Collection from './Collection/Collection';
 
 class ListCollectionsPage extends React.Component {
   constructor() {
     super();
 
     this.state = {
+      collections: [],
+      loaded: false,
+      error: null
     }
   }
 
+  componentDidMount() {
+    ClothingStoreApiService.getCollections()
+      .then(json => {
+        this.setState({collections: json, loaded: true});
+      })
+      .catch(e => {
+        this.setState({error: true});
+      })
+  }
+
   render() {
+    let content = false
+    if(this.state.error) {
+      content = <div>Could not load collections. Please try again later.</div>
+    }
+    else if(!this.state.loaded) {
+      content = <div>Loading...</div>
+    }
+    else { // loaded
+      let collections = this.state.collections.map((c, i) => <Collection name={c.name} collectionId={c.id} key={i} />)
+      content = <ul className="collection-grid">{collections}</ul>
+    }
+
     return (
       <div className="cart-page">
         <h1>Collections</h1>
-        <div className="collection-grid">
 
-          <div className="collection-box">
-            <Link to="/collections/shirts">
-              <div>
-                <img src={`${process.env.PUBLIC_URL}/assets/products/shirt.jpg`}></img>
-              </div>
-              <div>
-                Shirts
-            </div>
-            </Link>
-          </div>
-          <div className="collection-box">
-            <Link to="/collections/pants">
-              <div>
-                <img src={`${process.env.PUBLIC_URL}/assets/products/pants.jpg`}></img>
-              </div>
-              <div>
-                Pants
-            </div>
-            </Link>
-          </div>
-          <div className="collection-box">
-            <Link to="/collections/socks">
-              <div>
-                <img src={`${process.env.PUBLIC_URL}/assets/products/socks.jpg`}></img>
-              </div>
-              <div>
-                Socks
-            </div>
-            </Link>
-          </div>
+        {content}
 
-        </div>
       </div>
     );
   }

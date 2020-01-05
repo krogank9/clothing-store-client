@@ -1,14 +1,24 @@
 import React from 'react';
+import { withRouter } from "react-router-dom";
+
 import './CartPage.css';
 
+import CartItem from './CartItem/CartItem';
+
 import { Link } from "react-router-dom";
+import utils from '../../utils';
 
 class CartPage extends React.Component {
   constructor() {
     super();
 
     this.state = {
+      cart: []
     }
+  }
+
+  getCartPriceTotal = () => {
+    return utils.normalizePrice(0)
   }
 
   render() {
@@ -16,32 +26,20 @@ class CartPage extends React.Component {
       <div className="cart-page">
         <h1>Shopping Cart</h1>
         <table className="cart-table">
-          <tr>
-            <th>Item</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
-          </tr>
-          <tr>
-            <td>
-              <div className="cart-item">
-                <div className="cart-item-img-container">
-                  <img className="cart-product-img" src={`${process.env.PUBLIC_URL}/assets/products/shirt.jpg`}></img>
-                </div>
-                <div className="cart-item-info">
-                  <div>Plain Shirt</div>
-                  <small>Medium</small>
-                </div>
-              </div>
-            </td>
-            <td>1</td>
-            <td>$19.99</td>
-          </tr>
-          <tr>
-            <td colSpan="3">
-              <span className="cart-continue"><Link to="/">Continue shopping</Link></span>
-              <span className="cart-total">Total: $19.99</span>
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <th>Item</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+            </tr>
+            <CartItem product={{}} />
+            <tr>
+              <td colSpan="3">
+                <span className="cart-continue"><Link to="/collections">Continue shopping</Link></span>
+                <span className="cart-total">Total: ${this.getCartPriceTotal()}</span>
+              </td>
+            </tr>
+          </tbody>
         </table>
         <div className="checkout-button-container">
           <Link className="checkout-button" to="/checkout">Checkout</Link>
@@ -51,4 +49,4 @@ class CartPage extends React.Component {
   }
 }
 
-export default CartPage;
+export default withRouter(CartPage);

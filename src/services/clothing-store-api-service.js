@@ -117,10 +117,12 @@ const ClothingStoreApiService = {
         'Authorization': `Bearer ${authToken}`
       },
     })
-      .then(res =>
-        (!res.ok)
+      .then(res => {
+        console.log(res)
+        return (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
+      }
       )
   },
   // Reviews
@@ -136,7 +138,7 @@ const ClothingStoreApiService = {
       )
   },
   postReview(authToken, productId, rating, headline, content) {
-    return fetch(`${config.API_ENDPOINT}/favorites`, {
+    return fetch(`${config.API_ENDPOINT}/reviews`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

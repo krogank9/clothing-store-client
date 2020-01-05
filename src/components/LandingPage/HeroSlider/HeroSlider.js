@@ -12,8 +12,7 @@ class HeroSlider extends Component {
           <div className="hero-subtext">(DEMO APP)</div>
 
           <div className="shop-buttons-container">
-            <Link to="/collections" className="shop-button">Shop Mens</Link>
-            <Link to="/collections" className="shop-button">Shop Womens</Link>
+            <Link to="/collections" className="shop-button">View Our Collections</Link>
           </div>
         </div>
       </div>

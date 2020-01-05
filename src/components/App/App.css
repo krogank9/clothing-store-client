@@ -24,6 +24,10 @@ section {
   color: red;
 }
 
+.form-success {
+  color: green;
+}
+
 .title-link {
   color: #004D97;
   text-decoration: none;
