@@ -28,6 +28,11 @@ class ViewProductPage extends React.Component {
   }
 
   favoriteProduct = () => {
+    if (!this.context.loggedInUser) {
+      this.setState({ message: "Please login to favorite an item.", messageIsError: true })
+      return
+    }
+
     ClothingStoreApiService.postFavorite(TokenService.getAuthToken(), this.state.product.id)
       .then(json => {
         this.setState({ message: "Successfully favorited item", messageIsError: false });
