@@ -1,8 +1,6 @@
 import React from 'react';
 import './StarRatingInput.css';
 
-import { Link } from "react-router-dom";
-
 class StarRatingInput extends React.Component {
   constructor() {
     super();
