@@ -72,6 +72,13 @@ class ProfilePage extends React.Component {
     else if (!this.state.loaded) {
       content = <div>Loading...</div>
     }
+    else if (this.state.favorites.length === 0) {
+      content = (
+        <div>
+          Your currently have no favorites.
+        </div>
+      )
+    }
     else {
       let favorites = this.state.favorites.map((f, i) => (
         <Favorite product={f.product} key={i} onRemoveClicked={() => this.onRemoveFavoriteClicked(f.id)} />
