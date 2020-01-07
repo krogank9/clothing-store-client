@@ -10,7 +10,7 @@ class LandingPage extends Component {
         <HeroSlider />
         <div className="landing-page-description">
           <h1>Clothing Store Demo App</h1>
-          <p>This is a Clothing Store demo app created with React, Node, and PostgreSQL. Click "Shop" above to start browsing our selection.</p>
+          <p>This is a Clothing Store demo app created with React, Node, and PostgreSQL. Click "View Our Collections" above to start browsing our selection.</p>
           <p>To login to a demo account, use the username "test" with the password "abc123".</p>
           <p><a href="https://github.com/krogank9/clothing-store-client">Client</a>: React, HTML, CSS. <a href="https://github.com/krogank9/clothing-store-server">Server</a>: Node, ExpressJS, PostgreSQL.</p>
           <p>Created by <a href="http://ltkdigital.com">Logan Krumbhaar</a>.</p>
