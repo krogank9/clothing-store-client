@@ -76,7 +76,7 @@ class App extends React.Component {
     // Try to refresh the JWT token & log in on page load
     this.tryRefreshLogin();
     // Sync cart length
-    this.state.cart = CartService.getCartItems()
+    this.setState({cart: CartService.getCartItems()})
   }
 
   render() {
