@@ -8,7 +8,7 @@ class Collection extends Component {
   render() {
     console.log(Utils.normalizeName(this.props.name))
     return (
-      <li className="collection-li">
+      <li className="collection-li margin-bottom-30">
         <Link to={`/collections/${Utils.normalizeName(this.props.name)}.${this.props.collectionId}`}>
           <div>
             <img src={`${process.env.PUBLIC_URL}/assets/collections/${Utils.normalizeName(this.props.name)}.jpg`}></img>

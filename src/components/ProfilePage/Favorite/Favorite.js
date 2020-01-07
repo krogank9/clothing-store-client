@@ -29,7 +29,7 @@ class Favorite extends React.Component {
                 <img className="cart-product-img" src={`${process.env.PUBLIC_URL}/assets/products/${Utils.normalizeName(this.props.product.name)}.jpg`}></img>
               </Link>
             </div>
-            <div className="cart-item-info">
+            <div className="cart-item-info padding-15">
               <div><Link to={this.getProductLink()}>{this.props.product.name}</Link></div>
               <small>${this.getPrice()}</small>
               <br />

@@ -8,7 +8,7 @@ class Review extends Component {
   render() {
     return (
       <tr className="review-li">
-        <div className="review-content">
+        <div className="review-content padding-5">
           <div>
             User: {this.props.userName}
           </div>

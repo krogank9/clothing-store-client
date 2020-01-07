@@ -118,12 +118,12 @@ class WriteReviewPage extends React.Component {
 
             <h3>Add a headline</h3>
             <div>
-              <input type="text" name="reviewHeadline" placeholder="What's most important to know?" value={this.state.reviewHeadline} onChange={this.updateFormState}></input>
+              <input type="text" className="reviewHeadline" name="reviewHeadline" placeholder="What's most important to know?" value={this.state.reviewHeadline} onChange={this.updateFormState}></input>
             </div>
 
             <h3>Write your review</h3>
             <div>
-              <textarea name="reviewContent" value={this.state.reviewContent} placeholder="What did you like or dislike? What did you use this product for?" onChange={this.updateFormState}>
+              <textarea className="reviewContent" rows="5" name="reviewContent" value={this.state.reviewContent} placeholder="What did you like or dislike? What did you use this product for?" onChange={this.updateFormState}>
               </textarea>
             </div>
 
