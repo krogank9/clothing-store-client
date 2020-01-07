@@ -46,6 +46,7 @@ class ViewReviewsPage extends React.Component {
   render() {
     let content;
 
+    /*--------------------------------------------------------------------*/
     if (this.state.error) {
       content = (
         <div>
@@ -71,15 +72,23 @@ class ViewReviewsPage extends React.Component {
           </div>
           <h2>Reviews</h2>
 
-          <table className="review-list cart-table">
-            <tbody>
-              <tr>
-                <th>Reviews</th>
-              </tr>
+          {this.state.reviews.length === 0 ?
+            (
+              <div>No reviews for this product yet.</div>
+            )
+            :
+            (
+              <table className="review-list cart-table">
+                <tbody>
+                  <tr>
+                    <th>Reviews</th>
+                  </tr>
 
-              {reviews}
-            </tbody>
-          </table>
+                  {reviews}
+                </tbody>
+              </table>
+            )
+          }
         </div>
       );
     }
