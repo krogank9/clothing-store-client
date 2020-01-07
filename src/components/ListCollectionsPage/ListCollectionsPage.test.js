@@ -17,13 +17,4 @@ describe(`ListCollectionsPage component`, () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-
-  it('renders ProfilePage', () => {
-    const wrapper = shallow(
-      <BrowserRouter>
-        <ListCollectionsPage />
-      </BrowserRouter>
-    )
-    expect(toJson(wrapper)).toMatchSnapshot()
-  })
 })

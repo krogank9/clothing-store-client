@@ -16,14 +16,4 @@ describe(`CartPage component`, () => {
       </BrowserRouter>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
-
-
-  it('renders the App', () => {
-    const wrapper = shallow(
-      <BrowserRouter>
-        <CartPage />
-      </BrowserRouter>
-    )
-    expect(toJson(wrapper)).toMatchSnapshot()
-  })
 })

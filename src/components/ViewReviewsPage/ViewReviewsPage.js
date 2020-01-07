@@ -15,7 +15,7 @@ class ViewReviewsPage extends React.Component {
     super();
 
     this.state = {
-      product: null,
+      product: {},
       reviews: [],
       loaded: false,
       error: null

@@ -19,7 +19,7 @@ class ViewProductPage extends React.Component {
     super();
 
     this.state = {
-      product: null,
+      product: {},
       loaded: false,
       error: null,
       message: "",

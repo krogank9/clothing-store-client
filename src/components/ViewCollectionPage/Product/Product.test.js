@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from "react-router-dom";
-import Board from './Board';
+import Product from './Product';
+import { shallow } from 'enzyme'
+import toJson from 'enzyme-to-json'
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(
-    <BrowserRouter>
-      <Board name={"Test"} boardId={1} threadCount={3} />
-    </BrowserRouter>, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+describe(`Product component`, () => {
+
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(
+      <BrowserRouter>
+        <Product />
+      </BrowserRouter>, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
+
+
+  it('renders Product', () => {
+    const wrapper = shallow(
+      <BrowserRouter>
+        <Product />
+      </BrowserRouter>
+    )
+    expect(toJson(wrapper)).toMatchSnapshot()
+  })
+})

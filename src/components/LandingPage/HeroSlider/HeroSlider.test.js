@@ -1,22 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LandingPage from './LandingPage';
+import { BrowserRouter } from "react-router-dom";
+import HeroSlider from './HeroSlider';
 
 import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
 
-describe(`LandingPage component`, () => {
+describe(`HeroSlider component`, () => {
 
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<LandingPage />, div);
+    ReactDOM.render(<BrowserRouter><HeroSlider /></BrowserRouter>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
 
-  it('renders the LandingPage', () => {
+  it('renders the HeroSlider', () => {
     const wrapper = shallow(
-      <LandingPage />
+      <BrowserRouter>
+        <HeroSlider />
+      </BrowserRouter>
     )
     expect(toJson(wrapper)).toMatchSnapshot()
   })

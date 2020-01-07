@@ -8,6 +8,11 @@ import Utils from "../../../utils";
 class CartItem extends React.Component {
   static contextType = ClothingStoreContext;
 
+  static defaultProps = {
+    product: {},
+    quantity: 0
+  }
+
   constructor() {
     super();
 

@@ -3,9 +3,11 @@ const moment = require('moment');
 
 export default {
   normalizeName: (name) => {
+    name = name || ""
     return name.replace(/[^a-zA-Z0-9 -]/g, '').replace(/-/g, ' ').replace(/\s+/g, '-').toLowerCase();
   },
   normalizePrice: (price) => {
+    price = price || 0
     return parseFloat(price).toFixed(2);
   },
   getRatingText(rating, numRatings=1, starsOnly=true) {

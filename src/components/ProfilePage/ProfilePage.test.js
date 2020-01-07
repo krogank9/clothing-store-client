@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from "react-router-dom";
-import CartPage from './CartPage';
+import ProfilePage from './ProfilePage';
 
 import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
@@ -16,14 +16,4 @@ describe(`ProfilePage component`, () => {
       </BrowserRouter>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
-
-
-  it('renders ProfilePage', () => {
-    const wrapper = shallow(
-      <BrowserRouter>
-        <ProfilePage />
-      </BrowserRouter>
-    )
-    expect(toJson(wrapper)).toMatchSnapshot()
-  })
 })

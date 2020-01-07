@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import Utils from "../../../utils";
 
 class Favorite extends React.Component {
+  static defaultProps = {
+    product: {}
+  }
 
   getProductLink = () => {
     return `/products/${Utils.normalizeName(this.props.product.name)}.${this.props.product.id}`
