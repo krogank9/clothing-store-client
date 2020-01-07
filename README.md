@@ -1,4 +1,4 @@
-# Clothing Store CLient
+# Clothing Store Client
 
 This is a full stack clothing store demo app. You can create an account, login, browse collections, products, add products to your cart, create reviews products, and favorite items to save for later. The app utilizes HTML, CSS, and React for the frontend. For the backend it makes use of ExpressJS to expose API endpoints and PostgreSQL to manage the database.
 
