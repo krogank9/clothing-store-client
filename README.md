@@ -14,8 +14,8 @@ https://github.com/krogank9/clothing-store-server
 
 ## Screenshots:
 
-![recommendations](screenshot/landing-page.png)
-![recommendations](screenshot/product-page.png)
+![landing](screenshots/landing-page.png)
+![product](screenshots/product-page.png)
 
 ## Built With:
 
