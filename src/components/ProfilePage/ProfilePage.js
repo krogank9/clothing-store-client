@@ -38,7 +38,6 @@ class ProfilePage extends React.Component {
   componentDidMount() {
     ClothingStoreApiService.getMyFavorites(TokenService.getAuthToken())
       .then(json => {
-        console.log(json)
         this.setState({ favorites: json, loaded: true });
       })
       .catch(e => {

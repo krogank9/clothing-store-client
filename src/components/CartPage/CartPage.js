@@ -38,7 +38,6 @@ class CartPage extends React.Component {
         cartHashmap[p.id].quantity++
       }
     })
-    console.log(cart)
     return Object.entries(cartHashmap).map((e, i) => <CartItem quantity={e[1].quantity} product={e[1].product} key={i} />)
   }
 

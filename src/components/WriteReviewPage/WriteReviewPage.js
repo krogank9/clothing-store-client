@@ -53,9 +53,6 @@ class WriteReviewPage extends React.Component {
     const headline = this.state.reviewHeadline || ""
     const content = headline? this.state.reviewContent || "" : ""
 
-    console.log("headline:",headline)
-    console.log("content:",content)
-
     if (this.context.loggedInUser) {
       ClothingStoreApiService.postReview(TokenService.getAuthToken(), this.state.product.id, this.state.reviewRating, headline, content)
         .then(json => {

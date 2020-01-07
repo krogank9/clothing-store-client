@@ -44,7 +44,6 @@ class App extends React.Component {
   }
 
   removeFromCart = (productId) => {
-    console.log("removing from cart")
     const newCart = this.state.cart.filter(p => p.id !== productId)
     this.setState({ cart: newCart });
     CartService.setCart(newCart)

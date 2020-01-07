@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 class Collection extends Component {
   render() {
-    console.log(Utils.normalizeName(this.props.name))
     return (
       <li className="collection-li margin-bottom-30">
         <Link to={`/collections/${Utils.normalizeName(this.props.name)}.${this.props.collectionId}`}>

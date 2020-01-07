@@ -46,7 +46,6 @@ class ViewReviewsPage extends React.Component {
   render() {
     let content;
 
-    /*--------------------------------------------------------------------*/
     if (this.state.error) {
       content = (
         <div>
@@ -59,7 +58,6 @@ class ViewReviewsPage extends React.Component {
       content = <div>Loading...</div>
     }
     else {
-      console.log(this.state.reviews)
       let reviews = this.state.reviews.map((r, i) => <Review userName={r.user_name} reviewDate={r.date_created} headline={r.headline} rating={r.rating} content={r.content} key={i} />)
 
       content = (

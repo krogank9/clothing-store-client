@@ -24,7 +24,6 @@ class LoginPage extends Component {
 
     ClothingStoreApiService.login(this.state.userName, this.state.password)
       .then(json => {
-        console.log("logged in ")
         this.context.onUserLoggedIn(json.authToken, json.userName, json.userId)
         this.props.history.goBack()
       })
