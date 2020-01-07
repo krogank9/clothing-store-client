@@ -24,6 +24,10 @@ class CartItem extends React.Component {
     return false//"Medium"
   }
 
+  getProductLink = () => {
+    return `/products/${Utils.normalizeName(this.props.product.name)}.${this.props.product.id}`
+  }
+
   getPrice = () => {
     return Utils.normalizePrice(this.props.product.price)
   }
@@ -38,20 +42,29 @@ class CartItem extends React.Component {
         <td>
           <div className="cart-item">
             <div className="cart-item-img-container">
-              <img className="cart-product-img" src={`${process.env.PUBLIC_URL}/assets/products/${Utils.normalizeName(this.props.product.name)}.jpg`}></img>
+              <Link to={this.getProductLink()}>
+                <img className="cart-product-img" src={`${process.env.PUBLIC_URL}/assets/products/${Utils.normalizeName(this.props.product.name)}.jpg`}></img>
+              </Link>
             </div>
             <div className="cart-item-info">
-              <div>{this.props.product.name}</div>
-              <small>{this.getSize()}</small>
+              <div><Link to={this.getProductLink()}>{this.props.product.name}</Link></div>
+              {this.getPrice()}
+              <div className="mobile-only">
+                Qty: {this.props.quantity}
+                <br />
+                <Link to="#" onClick={this.onRemoveClicked}>Remove</Link>
+              </div>
             </div>
           </div>
         </td>
-        <td>
+        <td className="desktop-only">
           {this.props.quantity}
           <br />
           <Link to="#" onClick={this.onRemoveClicked}>Remove</Link>
         </td>
-        <td>${this.getQuantityPrice()}</td>
+        <td className="desktop-only">
+          ${this.getQuantityPrice()}
+        </td>
       </tr>
     );
   }

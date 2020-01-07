@@ -65,8 +65,8 @@ class CartPage extends React.Component {
                     <tbody>
                       <tr>
                         <th>Item</th>
-                        <th>Quantity</th>
-                        <th>Subtotal</th>
+                        <th className="desktop-only">Quantity</th>
+                        <th className="desktop-only">Subtotal</th>
                       </tr>
 
                       {this.getCartJSX(cart)}
@@ -83,6 +83,8 @@ class CartPage extends React.Component {
                   <div className="checkout-button-container">
                     <Link className="checkout-button" to="/checkout">Checkout</Link>
                   </div>
+
+                  <br /><br />
                 </>
               )
             }
