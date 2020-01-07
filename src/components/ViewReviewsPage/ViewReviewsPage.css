@@ -25,3 +25,13 @@
       list-style: none;
       padding: 0;
   }
+
+  .review-content {
+      text-align: left;
+      padding: 5px;
+  }
+
+
+  .review-date {
+      color: grey;
+  }

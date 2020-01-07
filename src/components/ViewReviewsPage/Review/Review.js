@@ -7,15 +7,16 @@ import { Link } from 'react-router-dom';
 class Review extends Component {
   render() {
     return (
-      <li className="review-li">
-        <div>
+      <tr className="review-li">
+        <div className="review-content">
           <div>
-            {this.props.userName} says: {this.props.headline}
+            User: {this.props.userName}
           </div>
-          <div>{Utils.getRatingText(this.props.rating)}</div>
-          <div>{this.props.content}</div>
+          <div>{Utils.getRatingText(this.props.rating)}  <b>{this.props.headline}</b></div>
+          <div className="review-date">Reviewed on {Utils.dateToHumanReadable(this.props.reviewDate)}</div>
+        <div>{this.props.content}</div>
         </div>
-      </li>
+      </tr>
     );
   }
 }

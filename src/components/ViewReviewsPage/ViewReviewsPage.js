@@ -59,23 +59,27 @@ class ViewReviewsPage extends React.Component {
     }
     else {
       console.log(this.state.reviews)
-      let reviews = this.state.reviews.map((r, i) => <Review userName={r.user_name} headline={r.headline} rating={r.rating} content={r.content} key={i} />)
+      let reviews = this.state.reviews.map((r, i) => <Review userName={r.user_name} reviewDate={r.date_created} headline={r.headline} rating={r.rating} content={r.content} key={i} />)
 
       content = (
-        <div className="reviews-page">
+        <div className="reviews-page cart-page">
           <h1>{this.state.product.name}</h1>
           <div>
             <Link to={`/products/${Utils.normalizeName(this.state.product.name)}.${this.state.product.id}`}>Go back</Link>
-             &nbsp; 
+            &nbsp;
             <Link to={`/products/${Utils.normalizeName(this.state.product.name)}.${this.state.product.id}/write-review`}>Write a review</Link>
           </div>
           <h2>Reviews</h2>
 
-          <ul className="review-list">
+          <table className="review-list cart-table">
+            <tbody>
+              <tr>
+                <th>Reviews</th>
+              </tr>
 
-            {reviews}
-
-          </ul>
+              {reviews}
+            </tbody>
+          </table>
         </div>
       );
     }
